@@ -1,0 +1,34 @@
+name: cleanup old artifacts
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  update-zen-browser-bin:
+    name: Cleanup-old-artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Run cleanup-old-artifacts script
+        id: update
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          chmod +x scripts/cleanup-old-artifacts.sh
+          ./scripts/cleanup-old-artifacts.sh xlibre-void/xlibre
+
+      - name: Commit and push
+        uses: EndBug/add-and-commit@v10
+        with:
+          message: "cleanup-old-artifacts"
+          github_token: ${{ secrets.GH_TOKEN }}
