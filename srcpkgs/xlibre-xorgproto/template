@@ -32,9 +32,9 @@ provides="bigreqsproto-${version}_${revision} compositeproto-${version}_${revisi
  xf86driproto-${version}_${revision} xf86miscproto-${version}_${revision}
  xf86vidmodeproto-${version}_${revision} xineramaproto-${version}_${revision}
  xproto-${version}_${revision} xf86bigfontproto-${version}_${revision}
- fontcacheproto-${version}_${revision}"
+ fontcacheproto-${version}_${revision} xorgproto-${version}_${revision}"
+# provides="xorgproto-${version}_${revision}"
 conflicts="xorgproto"
-replaces="xorgproto>=0"
 
 post_install() {
 	for license in COPYING-* ; do
