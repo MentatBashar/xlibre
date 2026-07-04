@@ -34,7 +34,7 @@ provides="bigreqsproto-${version}_${revision} compositeproto-${version}_${revisi
  xproto-${version}_${revision} xf86bigfontproto-${version}_${revision}
  fontcacheproto-${version}_${revision} xorgproto-${version}_${revision}"
 # provides="xorgproto-${version}_${revision}"
-conflicts="xorgproto"
+replaces="xorgproto"
 
 post_install() {
 	for license in COPYING-* ; do
