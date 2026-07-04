@@ -91,7 +91,7 @@ xlibre-xserver-xnest_package() {
     short_desc="Nested X server that runs as an X application"
     # depends="libXfont2 libunwind libXext pixman nettle libtirpc libXdmcp libX11 libXau"
     provides="xorg-server-xnest-${version}_${revision}"
-    conflicts="xorg-server-xnest"
+    replaces="xorg-server-xnest"
     pkg_install() {
         vlicense COPYING
         vmove usr/bin/Xnest
@@ -103,7 +103,7 @@ xlibre-xserver-xephyr_package() {
     short_desc="X server outputting to a window on a pre-existing X display"
     # depends="libXfont2 libglvnd libepoxy libunwind xcb-util-image xcb-util-renderutil xcb-util-wm xcb-util-keysyms pixman nettle libtirpc xcb-util libXdmcp libX11 libXau libxshmfence"
     provides="xorg-server-xephyr-${version}_${revision}"
-    conflicts="xorg-server-xephyr"
+    replaces="xorg-server-xephyr"
     pkg_install() {
         vlicense COPYING
         vmove usr/bin/Xephyr
@@ -115,7 +115,7 @@ xlibre-xserver-xvfb_package() {
     short_desc="Virtual framebuffer X server"
     # depends="libXfont2 libunwind pixman xauth libglvnd nettle libtirpc libXdmcp libXau xkeyboard-config"
     provides="xorg-server-xvfb-${version}_${revision}"
-    conflicts="xorg-server-xvfb"
+    replaces="xorg-server-xvfb"
     pkg_install() {
         vlicense COPYING
         vmove usr/bin/Xvfb
@@ -126,7 +126,7 @@ xlibre-xserver-xvfb_package() {
 xlibre-xserver-common_package() {
     short_desc+="- common files"
     provides="xorg-server-common-${version}_${revision}"
-    #conflicts="xorg-server-common"
+    # conflicts="xorg-server-common"
     replaces="xorg-server-common"
     pkg_install() {
         vlicense COPYING
@@ -139,7 +139,7 @@ xlibre-xserver-devel_package() {
      short_desc+=" - development files"
      depends="${makedepends}"
      provides="xorg-server-devel-${version}_${revision}"
-     conflicts="xorg-server-devel"
+     replaces="xorg-server-devel"
      pkg_install() {
          vlicense COPYING
          vmove usr/include
