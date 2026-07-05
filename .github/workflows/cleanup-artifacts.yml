@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  cleanup-old-artifacts:
+  cleanup-artifacts:
     name: Cleanup-old-artifacts
     runs-on: ubuntu-latest
     steps:
