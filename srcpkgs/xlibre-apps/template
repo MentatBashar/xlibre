@@ -17,6 +17,6 @@ short_desc="Xlibre applications"
 maintainer="Sofiya <sofiya@v.com>"
 license="Public Domain"
 homepage="https://github.com/X11Libre/xserver/wiki"
-conflicts="xorg-apps"
+provides="xorg-apps-${version}_${revision}"
 replaces="xorg-apps>=0"
 

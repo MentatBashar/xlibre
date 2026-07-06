@@ -7,7 +7,7 @@ depends="xlibre-xf86-video-fbdev xlibre-xf86-video-dummy"
 short_desc="XLibre video drivers meta-package"
 maintainer="Sofiya <sofiya@v.com>"
 license="MIT"
-conflicts="xorg-video-drivers"
+provides="xorg-video-drivers-${version}_${revision}"
 replaces="xorg-video-drivers>=0"
 homepage="https://github.com/X11Libre/xserver/wiki"
 
