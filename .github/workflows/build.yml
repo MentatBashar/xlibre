@@ -1,4 +1,4 @@
-name: Build XLibre for VOID linux
+name: Build XLibre for VOID linux 📦
 
 env:
   TAG: workflow-${{ github.run_number }}
