@@ -5,7 +5,6 @@
     local = yellow
     remote = green
   [color "diff"]
-    whitespace = red reverse
     meta = yellow bold
     frag = magenta bold
     old = red bold
@@ -14,3 +13,7 @@
     added = yellow
     changed = green
     untracked = cyan
+  [color "log"]
+    date = blue
+    author = green bold
+    graphColors = red,green,yellow,blue,magenta,cyan
