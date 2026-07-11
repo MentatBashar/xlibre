@@ -202,6 +202,7 @@ wget -O - https://github.com/xlibre-void/xlibre/raw/refs/heads/main/install-xlib
 
 <details>
 <summary><b>repo-key ► Click to expand</b></summary>
+<br />
 
 ```
 sudo mkdir -p /var/db/xbps/keys
