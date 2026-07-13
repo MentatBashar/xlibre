@@ -1,4 +1,4 @@
-name: Build XLibre for VOID linux 📦
+name: Build XLibre for VOID linux
 
 env:
   TAG: workflow-${{ github.run_number }}
@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   build:
-    name: Build packages
+    name: Build packages📦
     runs-on: ubuntu-latest
     permissions:
       contents: write
