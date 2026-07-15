@@ -29,9 +29,7 @@ jobs:
           - { arch: x86_64,       libc: glibc }
           - { arch: i686,         libc: glibc }
           #- { arch: aarch64,      libc: glibc }
-          #- { arch: armv7l,       libc: glibc }
           - { arch: x86_64-musl,  libc: musl }
-          #- { arch: armv6l-musl,  libc: musl }
           #- { arch: aarch64-musl, libc: musl }
     container:
       image: ghcr.io/void-linux/void-glibc-full:20250901R1
