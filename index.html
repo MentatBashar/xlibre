@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>XLibre Void Repository</title>
+  <style>
+    body { font-family: sans-serif; margin: 40px; line-height: 1.6; }
+    h1 { color: #2c5282; }
+    code { background: #f1f1f1; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>📦 XLibre Void Repository</h1>
+  <p>Репозиторий дополнительных пакетов для Void Linux с поддержкой кастомных драйверов и утилит.</p>
+  <h2>Как подключить</h2>
+  <pre><code>echo 'repository=https://sofijacom.github.io/void-package' | sudo tee /etc/xbps.d/99-xlibre-void.conf
+sudo xbps-install -S</code></pre>
+  <h2>Доступные пакеты</h2>
+  <ul>
+    <li><code>xlibre-xf86-input-evdev</code></li>
+    <li><code>xlibre-drm-next</code> (если есть)</li>
+    <!-- Добавьте свои -->
+  </ul>
+  <p>🔑 <a href="xlibre-void.pub">Публичный ключ</a> для проверки.</p>
+</body>
+</html>
