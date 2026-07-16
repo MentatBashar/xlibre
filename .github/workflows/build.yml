@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   build:
-    name: Build packages📦
+    name: Build 📦 ${{ matrix.config.arch }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -39,6 +39,7 @@ jobs:
       volumes:
         - /dev:/dev
       env:
+        PATH: '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/bin:/tmp/bin'
         ARCH: '${{ matrix.config.arch }}'
         XBPS_TARGET_ARCH: '${{ matrix.config.arch }}'
         REPO_OWNER: "${{ github.repository_owner }}"
@@ -111,6 +112,7 @@ jobs:
         run: |
           pkgs=$(cat /tmp/templates)
           for pkg in ${pkgs}; do
+            echo "🏗️ Building $pkg for $ARCH..."
             sudo -Eu builder ./xbps-src pkg -j$(nproc) -m masterdir-${{ matrix.config.arch }} -A ${{ matrix.config.arch }} "${pkg}" || printf "Failed building ${pkg}!\n"
           done
  
