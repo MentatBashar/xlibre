@@ -13,12 +13,12 @@
   <h1>📦 XLibre Void Repository</h1>
   <p>Репозиторий дополнительных пакетов для Void Linux с поддержкой кастомных драйверов и утилит.</p>
   <h2>Как подключить</h2>
-  <pre><code>echo 'repository=https://sofijacom.github.io/void-package' | sudo tee /etc/xbps.d/99-xlibre-void.conf
+  <pre><code>printf "repository=https://github.com/xlibre-void/xlibre/releases/latest/download/" | sudo tee /etc/xbps.d/99-repository-xlibre.conf
 sudo xbps-install -S</code></pre>
   <h2>Доступные пакеты</h2>
   <ul>
-    <li><code>xlibre-xf86-input-evdev</code></li>
-    <li><code>xlibre-drm-next</code> (если есть)</li>
+    <li><code>xlibre</code></li>
+    <li><code>xlibre-xserver</code> (если есть)</li>
     <!-- Добавьте свои -->
   </ul>
   <p>🔑 <a href="xlibre-void.pub">Публичный ключ</a> для проверки.</p>
