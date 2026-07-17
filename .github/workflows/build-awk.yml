@@ -5,12 +5,10 @@ env:
   SHA: ${{ github.sha }}
 
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - main
-    paths:
-      - srcpkgs/**
+    branches: [main]
+    paths: [srcpkgs/**]
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
