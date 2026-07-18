@@ -63,7 +63,7 @@ jobs:
           env -u XBPS_TARGET_ARCH xbps-install -y sudo bash curl grep jq zip unzip git github-cli xtools coreutils
           useradd -G xbuilder -M builder -s $(which bash)
           
-      - name: Checkout void-package
+      - name: 🔎 Checkout void-packages
         uses: actions/checkout@v6
         with:
           repository: void-linux/void-packages
@@ -75,7 +75,7 @@ jobs:
         run: |
           sed -i 's@for var in $(awk .*;@for var in $(printenv | cut -d'"'"'='"'"' -f1);@' common/environment/setup/sourcepkg.sh
           
-      - name: Merge this repository into void-linux/void-packages
+      - name: 🧩 Merge this repository into void-linux/void-packages
         working-directory: void-packages
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -97,7 +97,7 @@ jobs:
           fi
           rm --force hostdir/binpkgs/*.xbps.sig2
 
-      - name: Identify changes to build
+      - name: 📋 Identify changes to build
         working-directory: void-packages
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -111,7 +111,7 @@ jobs:
           git diff-tree -r --no-renames --name-only --diff-filter=AM ${latest_sha} ${SHA} -- 'srcpkgs/**' \
           | cut -d/ -f 2 | uniq | xargs sudo -Eu builder ./xbps-src sort-dependencies | tee /tmp/templates
 
-      - name: Setup void-packages
+      - name: 📋 Setup void-packages
         working-directory: void-packages
         run: |
           chown -R builder:builder .
@@ -123,7 +123,7 @@ jobs:
           echo 'XBPS_DISTDIR=$PWD/hostdir/distfiles' >> etc/conf
           echo 'XBPS_MASTERDIR_PKGS="$PWD/hostdir/binpkgs"' >> etc/conf
 
-      - name: Prepare masterdir
+      - name: ✅ Prepare masterdir
         working-directory: void-packages
         run: |
           chown -R builder:builder .
@@ -184,7 +184,7 @@ jobs:
           sudo umount "$MASTERDIR/dev"  || true
           sudo umount "$MASTERDIR/sys"  || true
          
-      - name: build pkgs
+      - name: 📦 build pkgs
         working-directory: void-packages
         run: |
           chown -R builder:builder .
@@ -194,7 +194,7 @@ jobs:
             sudo -Eu builder ./xbps-src pkg -j$(nproc) -m masterdir-${{ matrix.config.arch }} -A ${{ matrix.config.arch }} "${pkg}" || printf "Failed building ${pkg}!\n"
           done
 
-      - name: Clean & sign
+      - name: 🧾 Clean & sign
         working-directory: void-packages/hostdir/binpkgs
         env:
           PRIVKEY: ${{ secrets.PRIV_KEY }}
@@ -207,7 +207,7 @@ jobs:
           sudo -Eu builder rm -f key.pem
           sudo -Eu builder xbps-rindex --clean ${PWD}
 
-      - name: checksum
+      - name: 🔢 checksum
         working-directory: void-packages/hostdir/binpkgs
         run: |
           rm -rf *.sha256sum *.sha512sum
@@ -223,17 +223,17 @@ jobs:
             echo "❌ No packages found to checksum."
           fi
 
-      - name: Upload Artifact
+      - name: 📤 Upload Artifact
         uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.config.arch }}-repodata
           path: void-packages/hostdir/binpkgs
 
-      - name: short sha
+      - name: 🏷️ short sha
         run: |
           printf "SHORT_SHA=$(git rev-parse --short ${SHA})" >> $GITHUB_ENV
 
-      - name: release
+      - name: 🚀 release
         uses: softprops/action-gh-release@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
