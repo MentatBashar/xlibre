@@ -11,7 +11,7 @@
 [![Repo size](https://img.shields.io/github/repo-size/xlibre-void/xlibre?style=badge&logo=protondrive&logoColor=fff&colorA=363a4f&colorB=blue)](#)
 
 [![Auto Assign](https://github.com/xlibre-void/xlibre/actions/workflows/build.yml/badge.svg)](https://github.com/xlibre-void/xlibre/actions/workflows/build.yml)
-[![Proof HTML](https://github.com/xlibre-void/xlibre/actions/workflows/update.yml/badge.svg)](https://github.com/xlibre-void/xlibre/actions/workflows/update.yml)
+[![Proof HTML](https://github.com/xlibre-void/xlibre/actions/workflows/update-template.yml/badge.svg)](https://github.com/xlibre-void/xlibre/actions/workflows/update-template.yml)
 [![Build](https://img.shields.io/github/actions/workflow/status/xlibre-void/xlibre/build.yml?style=badge&label=BUILD&logo=githubactions&logoColor=white&colorA=363a4f&colorB)](https://github.com/xlibre-void/xlibre/actions)
 <!--
 [![Build](https://github.com/xlibre-void/xlibre/actions/workflows/build.yml/badge.svg?style=badge&logoColor=white&colorA=363a4f&colorB)](https://github.com/xlibre-void/xlibre/actions/workflows/build.yml)
