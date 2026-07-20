@@ -45,7 +45,7 @@ jobs:
     if: ${{ github.ref == 'refs/heads/main' }}
 
     steps:
-      - name: Prep container
+      - name: 🧰 Prep container
         run: |
           mkdir -p /etc/xbps.d && cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
           # sed -i 's|repo-default|repo-ci|g' /etc/xbps.d/*-repository-*.conf
@@ -54,13 +54,13 @@ jobs:
           env -u XBPS_TARGET_ARCH xbps-install -y sudo bash curl grep jq zip unzip git github-cli xtools
           useradd -G xbuilder -M builder -s $(which bash)
 
-      - name: Checkout xlibre
+      - name: 🔎 Checkout xlibre
         uses: actions/checkout@v6
         with:
           repository: void-linux/void-packages
           ref: master
 
-      - name: Merge this repository into void-linux/void-packages
+      - name: 🧩 Merge this repository into void-linux/void-packages
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -81,7 +81,7 @@ jobs:
           fi
           rm --force hostdir/binpkgs/*.xbps.sig2
 
-      - name: Identify changes to build
+      - name: 📋 Identify changes to build
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -95,7 +95,7 @@ jobs:
           git diff-tree -r --no-renames --name-only --diff-filter=AM ${latest_sha} ${SHA} -- 'srcpkgs/**' \
           | cut -d/ -f 2 | uniq | xargs sudo -Eu builder ./xbps-src sort-dependencies | tee /tmp/templates
 
-      - name: Setup void-packages
+      - name: 🛠️ Setup void-packages
         run: |
           chown -R builder:builder .
           echo XBPS_BUILD_ENVIRONMENT=void-packages-ci >> etc/conf
@@ -106,7 +106,7 @@ jobs:
 
       # -------------------- Packages to build --------------------
 
-      - name: build pkgs
+      - name: 📦 build pkgs
         run: |
           pkgs=$(cat /tmp/templates)
           for pkg in ${pkgs}; do
@@ -116,7 +116,7 @@ jobs:
 
       # -----------------------------------------------------------
 
-      - name: Clean & sign
+      - name: 🧾 Clean & sign
         working-directory: ./hostdir/binpkgs
         env:
           PRIVKEY: ${{ secrets.PRIV_KEY }}
@@ -140,7 +140,7 @@ jobs:
             echo "No packages were built. Skipping indexing."
           fi
 
-      - name: checksum
+      - name: 🔢 checksum
         working-directory: ./hostdir/binpkgs
         run: |
           rm -rf *.sha256sum *.sha512sum
@@ -156,17 +156,17 @@ jobs:
             echo "❌ No packages found to checksum."
           fi
 
-      - name: Upload Artifact
+      - name: 📤 Upload Artifact
         uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.config.arch }}-repodata
           path: ./hostdir/binpkgs
 
-      - name: short sha
+      - name: 🏷️ short sha
         run: |
           printf "SHORT_SHA=$(git rev-parse --short ${SHA})" >> $GITHUB_ENV
 
-      - name: release
+      - name: 🚀 release
         uses: softprops/action-gh-release@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
