@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - uses: dcarbone/install-jq-action@v3.2.0
+      - uses: dcarbone/install-jq-action@v4
 
       - name: Find autoupdate scripts
         id: collect
@@ -56,7 +56,7 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.PULL_PUSH }}
 
-      - uses: dcarbone/install-jq-action@v3.2.0
+      - uses: dcarbone/install-jq-action@v4
 
       - name: Run updates
         run: bash "${{ matrix.pkg.path }}"
@@ -141,7 +141,7 @@ jobs:
 
       - name: push updates
         if: steps.check-updates.outputs.has_updates == 'true'
-        uses: ad-m/github-push-action@v1.1.0
+        uses: ad-m/github-push-action@v1.3.0
         with:
           github_token: ${{ secrets.PULL_PUSH }}
           branch: ${{ github.ref }}
