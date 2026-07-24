@@ -5,7 +5,7 @@ version=1.20.2
 revision=1
 build_style=gnu-configure
 configure_args="--prefix=/usr"
-hostmakedepends="pkg-config autoconf automake libtool"
+hostmakedepends="pkg-config autoconf automake libtool gawk"
 makedepends="gawk gettext pkgconf"
 short_desc="xlibre autotool macros"
 maintainer="Sofiya <sofiya@v.org>"
