@@ -4,6 +4,7 @@ _pkgname=xorg-apps
 version=25.1.0
 revision=1
 metapackage=yes
+hostmakedepends="gawk"
 depends="iceauth>=0 oclock>=0 sessreg>=0 setxkbmap>=0
  smproxy>=0 transset>=0 x11perf>=0 xauth>=0
  xbacklight>=0 xcalc>=0 xclipboard>=0 xclock>=0
