@@ -1,6 +1,5 @@
 <img width="1366" height="auto" alt="XLibre-2" src="https://github.com/xlibre-void/xlibre/blob/main/img/XLibre-1.png" />
 
----
 <div align="center">
 	
 # XLibre for  [![Void Linux](https://img.shields.io/badge/Void_Linux-%23458161.svg?style=plastic&logo=voidlinux&logoColor=white)](#)
@@ -32,6 +31,7 @@
 [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/xlibre-void/xlibre/main?style=badge&label=Last%20Commit&logo=git&logoColor=fff&colorA=363a4f&colorB=purple)](#)
 [![Discussions](https://img.shields.io/github/discussions/xlibre-void/xlibre?style=badge&label=Discussions&logo=github&logoColor=fff&colorA=363a4f&colorB=purple)](https://github.com/orgs/xlibre-void/discussions)
 
+---
 <!-- style=for-the-badge / style string
 Possible values: [flat, flat-square, plastic, badge, for-the-badge, social] -->
 
