@@ -31,7 +31,7 @@
 [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/xlibre-void/xlibre/main?style=badge&label=Last%20Commit&logo=git&logoColor=fff&colorA=363a4f&colorB=purple)](#)
 [![Discussions](https://img.shields.io/github/discussions/xlibre-void/xlibre?style=badge&label=Discussions&logo=github&logoColor=fff&colorA=363a4f&colorB=purple)](https://github.com/orgs/xlibre-void/discussions)
 
-<hr></hr 1>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/sofijacom/sofijacom/blob/main/icons_line/split.png"><img width="888" height="40" alt="split" src="https://github.com/sofijacom/sofijacom/raw/main/icons_line/split.png" style="max-width: 100%; height: auto; max-height: 40px;"></a>
 
 <!-- style=for-the-badge / style string
 Possible values: [flat, flat-square, plastic, badge, for-the-badge, social] -->
