@@ -27,20 +27,59 @@ configure_args="
 "
 hostmakedepends="pkg-config xkbcomp flex xorgproto gawk cmake xtrans git"
 makedepends="
-	MesaLib-devel libXaw-devel libXfont2-devel libXrender-devel
-	libXres-devel libXtst-devel libXv-devel libXxf86dga-devel
-	libdmx-devel libepoxy-devel openssl-devel libtirpc-devel
-	libxkbfile-devel libxkbui-devel libxshmfence-devel pixman-devel
-	xcb-util-image-devel xcb-util-keysyms-devel xcb-util-renderutil-devel xcb-util-wm-devel
-	xcb-util-devel nettle-devel libxcvt-devel libX11-devel
-	libXmu-devel libXfixes-devel libXinerama-devel libXdmcp-devel
-	libXt-devel libXi-devel libXrandr-devel libXext-devel
-	libXau-devel libxkbcommon-devel libpciaccess-devel libgbm-devel
-	libdrm-devel libXpm-devel libbsd-devel
-	xkbcomp xtrans xorgproto font-util git gawk
-	eudev-libudev-devel $(vopt_if elogind 'dbus-devel')
+	MesaLib-devel
+	libXaw-devel
+	libXfont2-devel
+	libXrender-devel
+	libXres-devel
+	libXtst-devel
+	libXv-devel
+	libXxf86dga-devel
+	libdmx-devel
+	libepoxy-devel
+	openssl-devel
+	libtirpc-devel
+	libxkbfile-devel
+	libxkbui-devel
+	libxshmfence-devel
+	pixman-devel
+	xcb-util-image-devel
+	xcb-util-keysyms-devel
+	xcb-util-renderutil-devel
+	xcb-util-wm-devel
+	xcb-util-devel
+	nettle-devel
+	libxcvt-devel
+	libX11-devel
+	libXmu-devel
+	libXfixes-devel
+	libXinerama-devel
+	libXdmcp-devel
+	libXt-devel
+	libXi-devel
+	libXrandr-devel
+	libXext-devel
+	libXau-devel
+	libxkbcommon-devel
+	libpciaccess-devel
+	libgbm-devel
+	libdrm-devel
+	libXpm-devel
+	libbsd-devel
+	xkbcomp
+	xtrans
+	xorgproto
+	font-util
+	git
+	gawk
+	eudev-libudev-devel
+	$(vopt_if elogind 'dbus-devel')
 "
-depends="xkeyboard-config $(vopt_if elogind 'elogind') xlibre-xserver-common"
+depends="
+	xkeyboard-config
+	$(vopt_if elogind 'elogind')
+	xlibre-xserver-common
+"
 checkdepends="xkeyboard-config $depends"
 short_desc="Fork of Xorg with lots of code cleanups and enhanced functionality"
 maintainer="Sofiya <sofiya@v.com>"
@@ -48,9 +87,18 @@ license="MIT, BSD-3-Clause"
 homepage="https://x11libre.net/"
 distfiles="https://github.com/X11Libre/xserver/archive/refs/tags/xlibre-xserver-${version}.tar.gz"
 checksum=3c1f07f4b5f8a483473097be4b964ee97a2b92adde9de6c0d8d9d7217a382810
-provides="xorg-server-${version}_${revision} xserver-abi-extension-10_1 xserver-abi-input-24_1 xserver-abi-video-25_1 xf86-video-modesetting-1_1"
+provides="
+	xorg-server-${version}_${revision}
+	xserver-abi-extension-10_1
+	xserver-abi-input-24_1
+	xserver-abi-video-25_1
+	xf86-video-modesetting-1_1
+"
 # provides="xserver-abi-extension-11_1 xserver-abi-input-26_1 xserver-abi-video-28_1 xf86-video-modesetting-1_1"
-replaces="xf86-video-modesetting>=0 glamor-egl>=0"
+replaces="
+	xf86-video-modesetting>=0
+	glamor-egl>=0
+"
 conf_files="/etc/X11/Xwrapper.config"
 build_options="elogind"
 desc_option_elogind="Rootless XLibre support with elogind"
@@ -59,8 +107,12 @@ conflicts="xorg-server"
 
 # disable VBE on non-x86 systems
 case "$XBPS_TARGET_MACHINE" in
-	x86_64*|i686*) configure_args+=" -Dint10=x86emu" ;;
-	*) configure_args+=" -Dint10=false" ;;
+	x86_64*|i686*)
+		configure_args+=" -Dint10=x86emu"
+		;;
+	*)
+		configure_args+=" -Dint10=false"
+		;;
 esac
 
 # Symbols must be resolved lazily for modules to work.
