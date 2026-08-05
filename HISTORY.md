@@ -14,7 +14,7 @@ xlibre/
 └── README.md
 ```
 
-## Packages Included
+## 📦 Packages Included
 
 ### Core Server
 - **xlibre**
