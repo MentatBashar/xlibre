@@ -1,6 +1,8 @@
-<img width="1366" height="auto" alt="XLibre-2" src="https://github.com/xlibre-void/xlibre/blob/main/img/XLibre-2.png" /> <!-- XLibre-1 -->
+<!-- <img width="500" height="auto" alt="XLibre-2" src="https://github.com/xlibre-void/xlibre/blob/main/img/XLibre-2.png" /> -->
 
 <div align="center">
+
+<img width="540" height="auto" alt="XLibre-2" src="https://github.com/xlibre-void/xlibre/blob/main/img/XLibre-2.png" /> <!-- XLibre-1 -->
 	
 # XLibre for  [![Void Linux](https://img.shields.io/badge/Void_Linux-%23458161.svg?style=plastic&logo=voidlinux&logoColor=white)](#)
 <!-- ![void](https://github.com/xlibre-void/xlibre/blob/main/img/void.png) -->
