@@ -1,4 +1,4 @@
-<img width="1366" height="auto" alt="XLibre-2" src="https://github.com/xlibre-void/xlibre/blob/main/img/XLibre-1.png" /> <!-- XLibre-1 -->
+<img width="1366" height="auto" alt="XLibre-2" src="https://github.com/xlibre-void/xlibre/blob/main/img/XLibre-2.png" /> <!-- XLibre-1 -->
 
 <div align="center">
 	
