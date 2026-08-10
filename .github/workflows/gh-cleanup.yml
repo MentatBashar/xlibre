@@ -1,7 +1,9 @@
 name: 🗑️ Cleanup Artifacts
 on:
   schedule:
-    - cron: '0 0 * * *' # Run daily at midnight
+    # - cron: '0 0 * * *' # Run daily at midnight
+    # Каждый понедельник и субботу в 00:00 UTC (07:00 WIB)
+    - cron: '0 0 * * 1,6'
   workflow_dispatch:
 
 jobs:
