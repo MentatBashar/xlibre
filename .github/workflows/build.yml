@@ -61,7 +61,6 @@ jobs:
           ref: master
 
       - name: 🐛 Fix sourcepkg.sh — replace awk with shell parameter expansion
-        working-directory: void-packages
         run: |
           sed -i 's@for var in $(awk .*;@for var in $(printenv | cut -d'"'"'='"'"' -f1);@' common/environment/setup/sourcepkg.sh
           
@@ -110,7 +109,6 @@ jobs:
           yes | sudo -Eu builder ./xbps-src -m masterdir-${{ matrix.config.arch }} -A ${{ matrix.config.arch }} binary-bootstrap
 
       - name: ✅ Install gawk in chroot
-        working-directory: void-packages
         env:
           ARCH: ${{ matrix.config.arch }}
         run: |
