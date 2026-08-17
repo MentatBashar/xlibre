@@ -95,7 +95,7 @@ sudo xbps-query -Rs xlibre
 </div>
 
 <a id="installation"></a>  
-<img src="img/install.gif" width="200"/>
+<img src="img/install.gif" width="200" alt="install"/>
 
 ```shell
 sudo xbps-install -Su xlibre
@@ -124,7 +124,7 @@ sudo xbps-install -Su xlibre
 ### _or_
 
 <a id="installation"></a>  
-<img src="img/install.gif" width="200"/>
+<img src="img/install.gif" width="200" alt="install"/>
 
 ```shell
 sudo xbps-install -Su xlibre-minimal
