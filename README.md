@@ -94,7 +94,8 @@ sudo xbps-query -Rs xlibre
 <img width="auto" height="720" alt="Снимок экрана_20260701_114544" src="https://github.com/user-attachments/assets/2abfc69d-bea7-42c6-9912-ce20a576c8ed" />
 </div>
 
-### _install_
+<a id="installation"></a>  
+<img src="https://github.com/user-attachments/assets/7e1e2fa0-ab50-4901-a024-fe731fb44ab3" width="200"/>
 
 ```shell
 sudo xbps-install -Su xlibre
@@ -122,7 +123,8 @@ sudo xbps-install -Su xlibre
 
 ### _or_
 
-### _install_
+<a id="installation"></a>  
+<img src="https://github.com/user-attachments/assets/7e1e2fa0-ab50-4901-a024-fe731fb44ab3" width="200"/>
 
 ```shell
 sudo xbps-install -Su xlibre-minimal
