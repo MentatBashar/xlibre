@@ -44,7 +44,7 @@ jobs:
         XBPS_TARGET_ARCH: '${{ matrix.config.arch }}'
         REPO_OWNER: "${{ github.repository_owner }}"
         REPO_NAME: "${{ github.event.repository.name }}"
-    if: ${{ github.ref == 'refs/heads/main' }}
+    # if: ${{ github.ref == 'refs/heads/main' }}
 
     steps:
       #- name: Cache masterdir
