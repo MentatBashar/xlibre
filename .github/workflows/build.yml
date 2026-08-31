@@ -50,6 +50,8 @@ jobs:
     if: ${{ github.ref == 'refs/heads/main' }}
 
     steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
       - name: Prepare container
         run: |
           mkdir -p /etc/xbps.d && cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
